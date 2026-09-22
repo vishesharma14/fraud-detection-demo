@@ -39,6 +39,19 @@ because they don't match historical fraud labels. Combining them nudges
 PR-AUC up without sacrificing precision — the realistic story to tell in
 an interview is *why* the ensemble helps, not just that it does.
 
+## Explainability (SHAP)
+
+The chart below shows which features most influence fraud predictions
+across all transactions — merchant risk, distance patterns, and
+transaction velocity dominate, matching real-world fraud intuition:
+
+![SHAP Summary](plots/shap_summary.png)
+
+Example: SHAP explanation for a single transaction the model correctly
+flagged as fraud — showing exactly which factors pushed the decision:
+
+![SHAP Example Explanation](plots/shap_example_explanation.png)
+
 ## Dataset
 
 `generate_data.py` creates a **synthetic but realistic** transaction
